@@ -19,13 +19,22 @@ export default function About() {
                 Our Story
               </h2>
               <p className="text-lg text-gray-700 mb-4">
-                Founded with a vision to transform businesses through technology, BlackBugs Technologies has been at the forefront of digital innovation for years. We started small but thought big, believing that every business deserves access to world-class technology solutions.
+                Founded with a vision to transform businesses through
+                technology, BlackBugs Technologies has been at the forefront of
+                digital innovation for years. We started small but thought big,
+                believing that every business deserves access to world-class
+                technology solutions.
               </p>
               <p className="text-lg text-gray-700 mb-4">
-                Today, we're a team of passionate developers, designers, and strategists dedicated to delivering solutions that make a real impact. We've worked with startups, SMEs, and enterprises, helping them navigate the digital landscape and achieve their goals.
+                Today, we're a team of passionate developers, designers, and
+                strategists dedicated to delivering solutions that make a real
+                impact. We've worked with startups, SMEs, and enterprises,
+                helping them navigate the digital landscape and achieve their
+                goals.
               </p>
               <p className="text-lg text-gray-700">
-                Our success is built on a foundation of trust, transparency, and a relentless commitment to excellence.
+                Our success is built on a foundation of trust, transparency, and
+                a relentless commitment to excellence.
               </p>
             </div>
             <div className="bg-gradient-to-br from-primary to-blue-700 rounded-lg p-12 text-white">
@@ -70,7 +79,8 @@ export default function About() {
                 Our Mission
               </h3>
               <p className="text-gray-700 text-center">
-                To empower businesses with innovative, scalable, and reliable digital solutions that drive growth and transform industries.
+                To empower businesses with innovative, scalable, and reliable
+                digital solutions that drive growth and transform industries.
               </p>
             </div>
 
@@ -83,7 +93,9 @@ export default function About() {
                 Our Vision
               </h3>
               <p className="text-gray-700 text-center">
-                To be the most trusted technology partner for businesses seeking digital transformation and sustainable growth in a rapidly evolving world.
+                To be the most trusted technology partner for businesses seeking
+                digital transformation and sustainable growth in a rapidly
+                evolving world.
               </p>
             </div>
 
@@ -96,7 +108,8 @@ export default function About() {
                 Our Values
               </h3>
               <p className="text-gray-700 text-center">
-                Innovation, Integrity, Collaboration, and Customer-Centricity drive every decision we make and every solution we deliver.
+                Innovation, Integrity, Collaboration, and Customer-Centricity
+                drive every decision we make and every solution we deliver.
               </p>
             </div>
           </div>
@@ -106,11 +119,12 @@ export default function About() {
       {/* Team Culture */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Our Team
-          </h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Team</h2>
           <p className="text-xl text-gray-700 mb-12 max-w-3xl">
-            Our strength lies in our diverse, talented team of developers, designers, and strategists. We believe in fostering a culture of continuous learning, innovation, and collaboration where everyone can thrive.
+            Our strength lies in our diverse, talented team of developers,
+            designers, and strategists. We believe in fostering a culture of
+            continuous learning, innovation, and collaboration where everyone
+            can thrive.
           </p>
 
           <div className="grid md:grid-cols-4 gap-6">
@@ -118,9 +132,12 @@ export default function About() {
               { label: "Expert Developers", icon: "💻" },
               { label: "Creative Designers", icon: "🎨" },
               { label: "Strategic Thinkers", icon: "🧠" },
-              { label: "Customer Advocates", icon: "❤️" }
+              { label: "Customer Advocates", icon: "❤️" },
             ].map((item, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-8 text-center">
+              <div
+                key={index}
+                className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-8 text-center"
+              >
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <p className="text-gray-900 font-semibold">{item.label}</p>
               </div>

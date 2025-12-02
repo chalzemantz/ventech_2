@@ -12,7 +12,7 @@ export default function Services() {
   const icons: Record<string, React.ReactNode> = {
     custom: <Wrench size={32} />,
     web: <Code2 size={32} />,
-    mobile: <Smartphone size={32} />
+    mobile: <Smartphone size={32} />,
   };
 
   const filteredServices =
@@ -21,7 +21,7 @@ export default function Services() {
       : services.filter(
           (service) =>
             service.category.toLowerCase().replace(/\s+/g, "-") ===
-            activeCategory.toLowerCase().replace(/\s+/g, "-")
+            activeCategory.toLowerCase().replace(/\s+/g, "-"),
         );
 
   return (
@@ -45,9 +45,7 @@ export default function Services() {
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service) => {
-              const iconKey = service.category
-                .toLowerCase()
-                .includes("custom")
+              const iconKey = service.category.toLowerCase().includes("custom")
                 ? "custom"
                 : service.category.toLowerCase().includes("web")
                   ? "web"
@@ -77,31 +75,36 @@ export default function Services() {
                 <li className="flex items-start gap-3">
                   <span className="text-primary text-xl mt-1">✓</span>
                   <span className="text-gray-700">
-                    <strong>Expert Team:</strong> Experienced developers with proven track record
+                    <strong>Expert Team:</strong> Experienced developers with
+                    proven track record
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary text-xl mt-1">✓</span>
                   <span className="text-gray-700">
-                    <strong>Latest Technologies:</strong> We use cutting-edge tools and frameworks
+                    <strong>Latest Technologies:</strong> We use cutting-edge
+                    tools and frameworks
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary text-xl mt-1">✓</span>
                   <span className="text-gray-700">
-                    <strong>Scalable Solutions:</strong> Built to grow with your business
+                    <strong>Scalable Solutions:</strong> Built to grow with your
+                    business
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary text-xl mt-1">✓</span>
                   <span className="text-gray-700">
-                    <strong>On-time Delivery:</strong> We respect deadlines and deliver quality
+                    <strong>On-time Delivery:</strong> We respect deadlines and
+                    deliver quality
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary text-xl mt-1">✓</span>
                   <span className="text-gray-700">
-                    <strong>Ongoing Support:</strong> We're here to support you after launch
+                    <strong>Ongoing Support:</strong> We're here to support you
+                    after launch
                   </span>
                 </li>
               </ul>
@@ -109,7 +112,8 @@ export default function Services() {
             <div className="bg-gradient-to-br from-primary to-blue-700 rounded-lg p-12 text-white">
               <h3 className="text-3xl font-bold mb-6">Get Started Today</h3>
               <p className="text-blue-100 mb-8">
-                Let's discuss your project and create a solution that matches your vision and budget.
+                Let's discuss your project and create a solution that matches
+                your vision and budget.
               </p>
               <button className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors">
                 Schedule a Consultation

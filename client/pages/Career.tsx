@@ -1,14 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
-import {
-  Zap,
-  TrendingUp,
-  Shield,
-  Smile,
-  Leaf,
-  Star
-} from "lucide-react";
+import { Zap, TrendingUp, Shield, Smile, Leaf, Star } from "lucide-react";
 import { careerBenefits } from "@shared/data/careers";
 
 export default function Career() {
@@ -25,7 +18,10 @@ export default function Career() {
             Career at BlackBugs Technologies
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Explore exciting career opportunities with BlackBugs Technologies. Join a passionate team of innovators and take your professional journey to the next level. We're always looking for driven, skilled, and creative individuals to grow with us.
+            Explore exciting career opportunities with BlackBugs Technologies.
+            Join a passionate team of innovators and take your professional
+            journey to the next level. We're always looking for driven, skilled,
+            and creative individuals to grow with us.
           </p>
         </div>
       </section>
@@ -41,7 +37,10 @@ export default function Career() {
             {careerBenefits.map((benefit, index) => {
               const Icon = icons[index % icons.length];
               return (
-                <div key={benefit.id} className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow">
+                <div
+                  key={benefit.id}
+                  className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow"
+                >
                   <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-6 mx-auto">
                     <Icon className="text-primary" size={32} />
                   </div>
@@ -72,22 +71,22 @@ export default function Career() {
                 location: "Surat, Gujarat",
                 type: "Full-time",
                 description:
-                  "We're looking for an experienced full stack developer with expertise in React, Node.js, and cloud technologies. You'll work on innovative projects that impact thousands of users."
+                  "We're looking for an experienced full stack developer with expertise in React, Node.js, and cloud technologies. You'll work on innovative projects that impact thousands of users.",
               },
               {
                 title: "Mobile App Developer",
                 location: "Surat, Gujarat",
                 type: "Full-time",
                 description:
-                  "Join our mobile team to develop cutting-edge iOS and Android applications. Experience with React Native or native development is a plus."
+                  "Join our mobile team to develop cutting-edge iOS and Android applications. Experience with React Native or native development is a plus.",
               },
               {
                 title: "UI/UX Designer",
                 location: "Surat, Gujarat",
                 type: "Full-time",
                 description:
-                  "Create beautiful and intuitive user interfaces for our web and mobile applications. Portfolio showcasing your design work is required."
-              }
+                  "Create beautiful and intuitive user interfaces for our web and mobile applications. Portfolio showcasing your design work is required.",
+              },
             ].map((position, index) => (
               <div
                 key={index}
@@ -125,7 +124,9 @@ export default function Career() {
             Internship Program
           </h2>
           <p className="text-xl text-gray-700 mb-8">
-            Are you a student or fresh graduate? Our internship program provides hands-on experience, mentorship, and a chance to work on real-world projects. Get a head start in your tech career!
+            Are you a student or fresh graduate? Our internship program provides
+            hands-on experience, mentorship, and a chance to work on real-world
+            projects. Get a head start in your tech career!
           </p>
           <button className="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-colors">
             Learn About Internships
@@ -156,31 +157,36 @@ export default function Career() {
                 <li className="flex items-start gap-3">
                   <span className="text-primary text-xl">✓</span>
                   <span className="text-gray-700">
-                    <strong>Flexible Work Environment:</strong> Choose your work style - office, remote, or hybrid
+                    <strong>Flexible Work Environment:</strong> Choose your work
+                    style - office, remote, or hybrid
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary text-xl">✓</span>
                   <span className="text-gray-700">
-                    <strong>Learning Opportunities:</strong> Continuous training and skill development
+                    <strong>Learning Opportunities:</strong> Continuous training
+                    and skill development
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary text-xl">✓</span>
                   <span className="text-gray-700">
-                    <strong>Competitive Benefits:</strong> Health insurance, paid leave, and more
+                    <strong>Competitive Benefits:</strong> Health insurance,
+                    paid leave, and more
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary text-xl">✓</span>
                   <span className="text-gray-700">
-                    <strong>Team Activities:</strong> Regular team outings and celebrations
+                    <strong>Team Activities:</strong> Regular team outings and
+                    celebrations
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary text-xl">✓</span>
                   <span className="text-gray-700">
-                    <strong>Career Growth:</strong> Clear career paths and advancement opportunities
+                    <strong>Career Growth:</strong> Clear career paths and
+                    advancement opportunities
                   </span>
                 </li>
               </ul>
@@ -192,11 +198,10 @@ export default function Career() {
       {/* Contact CTA */}
       <section className="bg-primary text-white py-16">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Join Our Team?
-          </h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Join Our Team?</h2>
           <p className="text-xl text-blue-100 mb-8">
-            Send your resume and let's talk about your career with BlackBugs Technologies.
+            Send your resume and let's talk about your career with BlackBugs
+            Technologies.
           </p>
           <a
             href="mailto:careers@blackbugs.in"

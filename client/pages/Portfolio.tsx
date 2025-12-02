@@ -15,7 +15,7 @@ export default function Portfolio() {
       : portfolioProjects.filter(
           (project) =>
             project.category.toLowerCase().replace(/\s+/g, "-") ===
-            activeCategory.toLowerCase().replace(/\s+/g, "-")
+            activeCategory.toLowerCase().replace(/\s+/g, "-"),
         );
 
   return (
@@ -30,7 +30,10 @@ export default function Portfolio() {
               Success stories - See how we've helped our Clients
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              At Blackbugs Technologies, our work speaks through the success of our clients. From startups to enterprises, we've partnered with businesses across industries to build powerful digital solutions, streamline operations, and drive measurable growth.
+              At Blackbugs Technologies, our work speaks through the success of
+              our clients. From startups to enterprises, we've partnered with
+              businesses across industries to build powerful digital solutions,
+              streamline operations, and drive measurable growth.
             </p>
           </div>
 
@@ -81,11 +84,10 @@ export default function Portfolio() {
       {/* CTA Section */}
       <section className="bg-gradient-to-br from-gray-900 to-blue-900 text-white py-20">
         <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-4xl font-bold mb-6">
-            Have a Project in Mind?
-          </h2>
+          <h2 className="text-4xl font-bold mb-6">Have a Project in Mind?</h2>
           <p className="text-xl text-gray-300 mb-8">
-            We're ready to bring your ideas to life. Let's create something amazing together.
+            We're ready to bring your ideas to life. Let's create something
+            amazing together.
           </p>
           <button className="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-colors">
             Let's Get Started

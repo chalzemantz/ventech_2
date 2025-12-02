@@ -18,7 +18,7 @@ export default function BlogCard({
   excerpt,
   category,
   author,
-  date
+  date,
 }: BlogCardProps) {
   return (
     <Link to={`/blog/${id}`}>
@@ -39,14 +39,12 @@ export default function BlogCard({
               {category}
             </span>
           </div>
-          
+
           <h3 className="text-lg font-semibold text-gray-900 mb-3 line-clamp-2">
             {title}
           </h3>
-          
-          <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-            {excerpt}
-          </p>
+
+          <p className="text-gray-600 text-sm mb-4 line-clamp-2">{excerpt}</p>
 
           {/* Metadata */}
           <div className="flex items-center justify-between text-xs text-gray-500 border-t border-gray-200 pt-4">

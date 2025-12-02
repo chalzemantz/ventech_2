@@ -14,7 +14,8 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: "1",
-    title: "Understanding TMS (Transport Management System) and Its Key Benefits for Logistics",
+    title:
+      "Understanding TMS (Transport Management System) and Its Key Benefits for Logistics",
     slug: "understanding-tms",
     excerpt:
       "Learn how Transport Management Systems revolutionize logistics operations, improve efficiency, and reduce costs.",
@@ -34,12 +35,14 @@ A robust TMS can increase efficiency by up to 30% while reducing costs by 20%.
     category: "Logistics",
     author: "Black Bugs",
     date: "September 30, 2025",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
-    readTime: 5
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+    readTime: 5,
   },
   {
     id: "2",
-    title: "Leading Applications of AI in Transportation and Logistics Industry",
+    title:
+      "Leading Applications of AI in Transportation and Logistics Industry",
     slug: "ai-in-transportation",
     excerpt:
       "Explore how artificial intelligence is transforming transportation and logistics with predictive maintenance and autonomous vehicles.",
@@ -59,8 +62,9 @@ The adoption of AI in logistics can lead to 25% improvement in operational effic
     category: "Artificial Intelligence",
     author: "Black Bugs",
     date: "September 25, 2025",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop",
-    readTime: 6
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop",
+    readTime: 6,
   },
   {
     id: "3",
@@ -85,8 +89,9 @@ Following these practices ensures your application can grow with your business n
     category: "Web App Development",
     author: "Black Bugs",
     date: "September 20, 2025",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop",
-    readTime: 7
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop",
+    readTime: 7,
   },
   {
     id: "4",
@@ -111,8 +116,9 @@ Understanding these trends helps you stay competitive in the mobile app market.
     category: "Mobile App Development",
     author: "Black Bugs",
     date: "September 15, 2025",
-    image: "https://images.unsplash.com/photo-1512941691920-25bde6242e8d?w=500&h=300&fit=crop",
-    readTime: 8
+    image:
+      "https://images.unsplash.com/photo-1512941691920-25bde6242e8d?w=500&h=300&fit=crop",
+    readTime: 8,
   },
   {
     id: "5",
@@ -137,8 +143,9 @@ Custom software is an investment that pays dividends over time.
     category: "Custom Software",
     author: "Black Bugs",
     date: "September 10, 2025",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=300&fit=crop",
-    readTime: 6
+    image:
+      "https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=300&fit=crop",
+    readTime: 6,
   },
   {
     id: "6",
@@ -163,9 +170,10 @@ Good IT support ensures your business operates smoothly without interruptions.
     category: "IT Management",
     author: "Black Bugs",
     date: "September 5, 2025",
-    image: "https://images.unsplash.com/photo-1460925895917-adf4e565e6b2?w=500&h=300&fit=crop",
-    readTime: 5
-  }
+    image:
+      "https://images.unsplash.com/photo-1460925895917-adf4e565e6b2?w=500&h=300&fit=crop",
+    readTime: 5,
+  },
 ];
 
 export const blogCategories = [
@@ -174,5 +182,5 @@ export const blogCategories = [
   "Custom Software",
   "Artificial Intelligence",
   "Logistics",
-  "IT Management"
+  "IT Management",
 ];

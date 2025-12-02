@@ -33,7 +33,10 @@ export default function Blog() {
               {/* Search */}
               <div className="flex-1">
                 <div className="relative">
-                  <Search className="absolute left-4 top-3 text-gray-400" size={20} />
+                  <Search
+                    className="absolute left-4 top-3 text-gray-400"
+                    size={20}
+                  />
                   <input
                     type="text"
                     placeholder="Search articles..."
@@ -118,7 +121,8 @@ export default function Blog() {
             <div className="bg-gradient-to-br from-primary to-blue-700 rounded-lg p-12 text-white">
               <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
               <p className="text-blue-100 mb-6">
-                Subscribe to our newsletter and never miss the latest articles, tips, and insights about technology and business.
+                Subscribe to our newsletter and never miss the latest articles,
+                tips, and insights about technology and business.
               </p>
               <div className="flex gap-2">
                 <input

@@ -9,7 +9,7 @@ export default function CategoryFilter({
   categories,
   activeCategory,
   onCategoryChange,
-  showAll = true
+  showAll = true,
 }: CategoryFilterProps) {
   return (
     <div className="flex flex-wrap gap-3 justify-center md:justify-start">

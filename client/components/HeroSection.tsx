@@ -13,21 +13,21 @@ export default function HeroSection({
   subtitle,
   backgroundImage,
   children,
-  className = ""
+  className = "",
 }: HeroSectionProps) {
   return (
     <div
       className={`relative w-full py-24 md:py-32 ${className}`}
       style={{
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+        backgroundImage: backgroundImage
+          ? `url(${backgroundImage})`
+          : undefined,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       {/* Overlay */}
-      {backgroundImage && (
-        <div className="absolute inset-0 bg-black/40" />
-      )}
+      {backgroundImage && <div className="absolute inset-0 bg-black/40" />}
 
       {/* Dark background fallback */}
       {!backgroundImage && (
@@ -40,9 +40,7 @@ export default function HeroSection({
           {title}
         </h1>
         {subtitle && (
-          <p className="text-lg md:text-xl text-gray-200 mb-8">
-            {subtitle}
-          </p>
+          <p className="text-lg md:text-xl text-gray-200 mb-8">{subtitle}</p>
         )}
         {children}
       </div>

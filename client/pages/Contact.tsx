@@ -10,18 +10,18 @@ export default function Contact() {
     email: "",
     phone: "",
     company: "",
-    message: ""
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -106,9 +106,12 @@ export default function Contact() {
                       Address
                     </h3>
                     <p className="text-gray-700">
-                      606, Silver Trade Centre<br />
-                      Beside Moon Garden, Utaran<br />
-                      Surat, Gujarat, India<br />
+                      606, Silver Trade Centre
+                      <br />
+                      Beside Moon Garden, Utaran
+                      <br />
+                      Surat, Gujarat, India
+                      <br />
                       394105
                     </p>
                   </div>
@@ -126,7 +129,8 @@ export default function Contact() {
                       Business Hours
                     </h3>
                     <p className="text-gray-700">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br />
+                      Monday - Friday: 9:00 AM - 6:00 PM
+                      <br />
                       Saturday & Sunday: Closed
                     </p>
                   </div>
@@ -147,7 +151,8 @@ export default function Contact() {
                       Thank You!
                     </h3>
                     <p className="text-green-800">
-                      We've received your message and will get back to you shortly.
+                      We've received your message and will get back to you
+                      shortly.
                     </p>
                   </div>
                 ) : (

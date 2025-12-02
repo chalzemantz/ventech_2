@@ -105,7 +105,9 @@ export default function BlogPost() {
                 About BlackBugs Technologies
               </h3>
               <p className="text-gray-700">
-                We are a team of experienced software developers, designers, and digital strategists committed to helping businesses succeed through innovative technology solutions.
+                We are a team of experienced software developers, designers, and
+                digital strategists committed to helping businesses succeed
+                through innovative technology solutions.
               </p>
             </div>
           </div>
@@ -159,7 +161,8 @@ export default function BlogPost() {
             Need Help With Your Project?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Let's discuss how we can help you implement these technologies or solutions for your business.
+            Let's discuss how we can help you implement these technologies or
+            solutions for your business.
           </p>
           <button className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors">
             Get in Touch

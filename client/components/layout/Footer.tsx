@@ -12,16 +12,26 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-lg mb-4">BlackBugs</h3>
             <p className="text-sm text-gray-400 mb-4">
-              Transform your ideas into powerful digital solutions with our expert team.
+              Transform your ideas into powerful digital solutions with our
+              expert team.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-primary transition-colors"
+              >
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-primary transition-colors"
+              >
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-primary transition-colors"
+              >
                 <Facebook size={20} />
               </a>
             </div>
@@ -32,22 +42,34 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-sm hover:text-primary transition-colors">
+                <Link
+                  to="/"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-sm hover:text-primary transition-colors">
+                <Link
+                  to="/about"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-sm hover:text-primary transition-colors">
+                <Link
+                  to="/services"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio" className="text-sm hover:text-primary transition-colors">
+                <Link
+                  to="/portfolio"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   Portfolio
                 </Link>
               </li>
@@ -59,22 +81,34 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/services" className="text-sm hover:text-primary transition-colors">
+                <a
+                  href="/services"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   Web Development
                 </a>
               </li>
               <li>
-                <a href="/services" className="text-sm hover:text-primary transition-colors">
+                <a
+                  href="/services"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   Mobile Apps
                 </a>
               </li>
               <li>
-                <a href="/services" className="text-sm hover:text-primary transition-colors">
+                <a
+                  href="/services"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   Custom Software
                 </a>
               </li>
               <li>
-                <a href="/services" className="text-sm hover:text-primary transition-colors">
+                <a
+                  href="/services"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   IT Support
                 </a>
               </li>
@@ -87,21 +121,29 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Mail size={16} className="mt-1 flex-shrink-0" />
-                <a href="mailto:info@blackbugs.in" className="text-sm hover:text-primary transition-colors">
+                <a
+                  href="mailto:info@blackbugs.in"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   info@blackbugs.in
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <Phone size={16} className="mt-1 flex-shrink-0" />
-                <a href="tel:+917698376466" className="text-sm hover:text-primary transition-colors">
+                <a
+                  href="tel:+917698376466"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   +91 76983 76466
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
                 <span className="text-sm">
-                  606, Silver Trade Centre<br />
-                  Surat, Gujarat, India<br />
+                  606, Silver Trade Centre
+                  <br />
+                  Surat, Gujarat, India
+                  <br />
                   394105
                 </span>
               </li>
@@ -116,13 +158,22 @@ export default function Footer() {
               © {currentYear} BlackBugs Technologies. All rights reserved.
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-sm text-gray-400 hover:text-primary transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-sm text-gray-400 hover:text-primary transition-colors"
+              >
                 Terms of Service
               </a>
-              <a href="#" className="text-sm text-gray-400 hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-sm text-gray-400 hover:text-primary transition-colors"
+              >
                 Cookie Policy
               </a>
             </div>

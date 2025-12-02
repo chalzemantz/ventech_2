@@ -13,19 +13,19 @@ export default function Navbar() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { 
+    {
       label: "Services",
       href: "/services",
       submenu: [
         { label: "Web Development", href: "/services" },
         { label: "Mobile App Development", href: "/services" },
-        { label: "Custom Software", href: "/services" }
-      ]
+        { label: "Custom Software", href: "/services" },
+      ],
     },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Career", href: "/career" },
     { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" }
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -33,7 +33,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 font-bold text-xl text-gray-900">
+          <Link
+            to="/"
+            className="flex items-center gap-2 font-bold text-xl text-gray-900"
+          >
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
               <span className="text-white text-sm font-bold">B</span>
             </div>
