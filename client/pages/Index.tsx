@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import ServiceCard from "@/components/ServiceCard";
 import { CheckCircle, Zap, Users, Award } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Index() {
   return (
