@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import BlogCard from "@/components/BlogCard";
 import { blogPosts, blogCategories } from "@shared/data/blog";
 import { Search } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("all");
