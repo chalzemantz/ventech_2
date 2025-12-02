@@ -18,23 +18,57 @@ export default function Index() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left content */}
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <motion.h1
+                className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
                 We Are a Team of Experts
-              </h1>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              </motion.h1>
+              <motion.h2
+                className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 <span className="text-primary">Digital Solutions</span> for Your Business Growth
-              </h2>
-              <p className="text-xl text-gray-200 mb-4">
+              </motion.h2>
+              <motion.p
+                className="text-xl text-gray-200 mb-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 Custom Software, Web, and Mobile App Development
-              </p>
-              <p className="text-lg text-gray-300 mb-8 italic">
+              </motion.p>
+              <motion.p
+                className="text-lg text-gray-300 mb-8 italic"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 Tailored to Your Needs | Delivered with Excellence
-              </p>
-              <p className="text-gray-300 mb-12 text-base leading-relaxed">
+              </motion.p>
+              <motion.p
+                className="text-gray-300 mb-12 text-base leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
                 Partner with BlackBugs Technologies to turn your ideas into powerful, scalable solutions that drive success.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              </motion.p>
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
                 <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-lg">
                   Let's Talk →
                 </Button>
@@ -43,8 +77,8 @@ export default function Index() {
                     View all Work →
                   </Button>
                 </Link>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Right - Team image */}
             <div className="hidden md:block">
