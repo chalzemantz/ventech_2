@@ -164,35 +164,44 @@ export default function Index() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Custom Software Development</h3>
-              <p className="text-blue-100 mb-6">
-                Build scalable, secure enterprise solutions tailored specifically to your unique business requirements.
-              </p>
-              <Link to="/services" className="text-blue-200 hover:text-white font-semibold flex items-center gap-2">
-                Learn more →
-              </Link>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-400 to-blue-500 rounded-lg p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Web App Development</h3>
-              <p className="text-blue-100 mb-6">
-                Create responsive, fast, and engaging web applications using modern frameworks and best practices.
-              </p>
-              <Link to="/services" className="text-blue-200 hover:text-white font-semibold flex items-center gap-2">
-                Learn more →
-              </Link>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Mobile App Development</h3>
-              <p className="text-blue-100 mb-6">
-                Develop feature-rich mobile applications for iOS and Android that users love to use.
-              </p>
-              <Link to="/services" className="text-blue-200 hover:text-white font-semibold flex items-center gap-2">
-                Learn more →
-              </Link>
-            </div>
+            {[
+              {
+                title: "Custom Software Development",
+                description: "Build scalable, secure enterprise solutions tailored specifically to your unique business requirements.",
+                from: "from-blue-500",
+                to: "to-blue-600"
+              },
+              {
+                title: "Web App Development",
+                description: "Create responsive, fast, and engaging web applications using modern frameworks and best practices.",
+                from: "from-blue-400",
+                to: "to-blue-500"
+              },
+              {
+                title: "Mobile App Development",
+                description: "Develop feature-rich mobile applications for iOS and Android that users love to use.",
+                from: "from-blue-600",
+                to: "to-blue-700"
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                className={`bg-gradient-to-br ${service.from} ${service.to} rounded-lg p-8 text-white`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <p className="text-blue-100 mb-6">
+                  {service.description}
+                </p>
+                <Link to="/services" className="text-blue-200 hover:text-white font-semibold flex items-center gap-2">
+                  Learn more →
+                </Link>
+              </motion.div>
+            ))}
           </div>
 
           <div className="text-center mt-12">
