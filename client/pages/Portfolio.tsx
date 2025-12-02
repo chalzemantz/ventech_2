@@ -45,18 +45,25 @@ export default function Portfolio() {
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {filteredProjects.map((project) => (
-              <PortfolioCard
+            {filteredProjects.map((project, index) => (
+              <motion.div
                 key={project.id}
-                image={project.image}
-                title={project.title}
-                category={project.category}
-                description={project.description}
-                onViewDetails={() => {
-                  // Handle view details - could navigate to detail page
-                  console.log("View details for:", project.id);
-                }}
-              />
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <PortfolioCard
+                  image={project.image}
+                  title={project.title}
+                  category={project.category}
+                  description={project.description}
+                  onViewDetails={() => {
+                    // Handle view details - could navigate to detail page
+                    console.log("View details for:", project.id);
+                  }}
+                />
+              </motion.div>
             ))}
           </div>
 
