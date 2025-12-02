@@ -81,15 +81,20 @@ export default function Index() {
             </motion.div>
 
             {/* Right - Team image */}
-            <div className="hidden md:block">
+            <motion.div
+              className="hidden md:block"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <div className="relative">
                 <img
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=600&fit=crop"
                   alt="BlackBugs Team"
-                  className="rounded-lg shadow-2xl"
+                  className="rounded-lg shadow-2xl hover:shadow-3xl transition-shadow"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
