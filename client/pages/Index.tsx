@@ -113,26 +113,42 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ServiceCard
-              icon={<Award />}
-              title="Industry Experience"
-              description="Years of hands-on experience across industries allow us to deliver tailored solutions."
-            />
-            <ServiceCard
-              icon={<Zap />}
-              title="Latest Technologies"
-              description="We use cutting-edge tools and frameworks to build modern, scalable solutions."
-            />
-            <ServiceCard
-              icon={<Users />}
-              title="Expert Team"
-              description="Our passionate professionals bring expertise and dedication to every project."
-            />
-            <ServiceCard
-              icon={<CheckCircle />}
-              title="Quality Assurance"
-              description="Rigorous testing and QA ensure reliable, bug-free applications."
-            />
+            {[
+              {
+                icon: <Award />,
+                title: "Industry Experience",
+                description: "Years of hands-on experience across industries allow us to deliver tailored solutions."
+              },
+              {
+                icon: <Zap />,
+                title: "Latest Technologies",
+                description: "We use cutting-edge tools and frameworks to build modern, scalable solutions."
+              },
+              {
+                icon: <Users />,
+                title: "Expert Team",
+                description: "Our passionate professionals bring expertise and dedication to every project."
+              },
+              {
+                icon: <CheckCircle />,
+                title: "Quality Assurance",
+                description: "Rigorous testing and QA ensure reliable, bug-free applications."
+              }
+            ].map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <ServiceCard
+                  icon={card.icon}
+                  title={card.title}
+                  description={card.description}
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
