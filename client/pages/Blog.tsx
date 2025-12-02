@@ -64,17 +64,24 @@ export default function Blog() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.length > 0 ? (
-              filteredPosts.map((post) => (
-                <BlogCard
+              filteredPosts.map((post, index) => (
+                <motion.div
                   key={post.id}
-                  id={post.id}
-                  image={post.image}
-                  title={post.title}
-                  excerpt={post.excerpt}
-                  category={post.category}
-                  author={post.author}
-                  date={post.date}
-                />
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <BlogCard
+                    id={post.id}
+                    image={post.image}
+                    title={post.title}
+                    excerpt={post.excerpt}
+                    category={post.category}
+                    author={post.author}
+                    date={post.date}
+                  />
+                </motion.div>
               ))
             ) : (
               <div className="col-span-full text-center py-12">
