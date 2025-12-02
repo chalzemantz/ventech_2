@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import PortfolioCard from "@/components/PortfolioCard";
 import CategoryFilter from "@/components/CategoryFilter";
 import { portfolioProjects, portfolioCategories } from "@shared/data/portfolio";
+import { motion } from "framer-motion";
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("all");
