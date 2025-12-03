@@ -259,8 +259,12 @@ export default function Contact() {
                     </div>
 
                     {/* Submit Button */}
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-semibold">
-                      Send Message
+                    <Button
+                      type="submit"
+                      disabled={isLoading}
+                      className="w-full bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed text-white py-3 rounded-lg font-semibold"
+                    >
+                      {isLoading ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 )}
