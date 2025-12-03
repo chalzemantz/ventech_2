@@ -33,17 +33,32 @@ export default function Contact() {
     setIsLoading(true);
 
     try {
+      const body = JSON.stringify(formData as ContactFormData);
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData as ContactFormData),
+        body,
       });
 
-      const data: ContactResponse = await response.json();
+      if (!response.ok) {
+        // Handle HTTP error responses
+        let errorMessage = "Failed to send message. Please try again.";
+        try {
+          const errorData = await response.json() as Partial<ContactResponse>;
+          errorMessage = errorData.message || errorMessage;
+        } catch {
+          // If response is not JSON, use default message
+        }
+        toast.error(errorMessage);
+        return;
+      }
 
-      if (response.ok && data.success) {
+      const data = await response.json() as ContactResponse;
+
+      if (data.success) {
         toast.success(data.message);
         setSubmitted(true);
         // Reset form after 3 seconds
@@ -56,7 +71,15 @@ export default function Contact() {
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast.error("An error occurred while sending your message. Please try again.");
+
+      // Provide more specific error messages
+      if (error instanceof TypeError) {
+        toast.error("Network error. Please check your connection and try again.");
+      } else if (error instanceof SyntaxError) {
+        toast.error("Invalid response from server. Please try again.");
+      } else {
+        toast.error("An error occurred while sending your message. Please try again.");
+      }
     } finally {
       setIsLoading(false);
     }
