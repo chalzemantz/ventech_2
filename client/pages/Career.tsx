@@ -195,7 +195,7 @@ export default function Career() {
         </div>
       </section>
 
-      {/* Contact CTA */}
+      
       <section className="bg-primary text-white py-16">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-4xl font-bold mb-6">Ready to Join Our Team?</h2>
