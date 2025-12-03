@@ -80,6 +80,24 @@ export const handleContact: RequestHandler = async (req, res) => {
       } as ContactResponse);
     }
 
+    // Handle body stream errors
+    if (error instanceof Error && error.message.includes("body stream")) {
+      console.error("Body stream error:", error);
+      return res.status(400).json({
+        success: false,
+        message: "Invalid request format. Please try again."
+      } as ContactResponse);
+    }
+
+    // Handle JSON parse errors
+    if (error instanceof SyntaxError && "body" in error) {
+      console.error("JSON parse error:", error);
+      return res.status(400).json({
+        success: false,
+        message: "Invalid JSON in request. Please try again."
+      } as ContactResponse);
+    }
+
     // Handle other errors
     console.error("Contact form error:", error);
     return res.status(500).json({
