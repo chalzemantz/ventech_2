@@ -12,7 +12,7 @@ const contactFormSchema = z.object({
   email: z.string().email("Invalid email address"),
   phone: z.string().optional(),
   company: z.string().optional(),
-  message: z.string().min(1, "Message is required").trim()
+  message: z.string().min(1, "Message is required").trim(),
 });
 
 export const handleContact: RequestHandler = async (req, res) => {
@@ -36,14 +36,14 @@ export const handleContact: RequestHandler = async (req, res) => {
         ${data.company ? `<p><strong>Company:</strong> ${escapeHtml(data.company)}</p>` : ""}
         <h3>Message:</h3>
         <p>${escapeHtml(data.message).replace(/\n/g, "<br>")}</p>
-      `
+      `,
     });
 
     if (adminEmailResult.error) {
       console.error("Failed to send admin email:", adminEmailResult.error);
       return res.status(500).json({
         success: false,
-        message: "Failed to send email. Please try again later."
+        message: "Failed to send email. Please try again later.",
       } as ContactResponse);
     }
 
@@ -58,17 +58,21 @@ export const handleContact: RequestHandler = async (req, res) => {
         <p>We received your message and appreciate you reaching out to BlackBugs Technologies.</p>
         <p>Our team will review your inquiry and get back to you as soon as possible.</p>
         <p>Best regards,<br>The BlackBugs Technologies Team</p>
-      `
+      `,
     });
 
     if (userEmailResult.error) {
-      console.error("Failed to send confirmation email:", userEmailResult.error);
+      console.error(
+        "Failed to send confirmation email:",
+        userEmailResult.error,
+      );
       // Don't fail the response if confirmation email fails, as the admin email was sent successfully
     }
 
     return res.status(200).json({
       success: true,
-      message: "Your message has been sent successfully. We'll get back to you soon!"
+      message:
+        "Your message has been sent successfully. We'll get back to you soon!",
     } as ContactResponse);
   } catch (error) {
     // Handle validation errors
@@ -76,7 +80,7 @@ export const handleContact: RequestHandler = async (req, res) => {
       const firstError = error.errors[0];
       return res.status(400).json({
         success: false,
-        message: firstError.message
+        message: firstError.message,
       } as ContactResponse);
     }
 
@@ -85,7 +89,7 @@ export const handleContact: RequestHandler = async (req, res) => {
       console.error("Body stream error:", error);
       return res.status(400).json({
         success: false,
-        message: "Invalid request format. Please try again."
+        message: "Invalid request format. Please try again.",
       } as ContactResponse);
     }
 
@@ -94,7 +98,7 @@ export const handleContact: RequestHandler = async (req, res) => {
       console.error("JSON parse error:", error);
       return res.status(400).json({
         success: false,
-        message: "Invalid JSON in request. Please try again."
+        message: "Invalid JSON in request. Please try again.",
       } as ContactResponse);
     }
 
@@ -102,7 +106,8 @@ export const handleContact: RequestHandler = async (req, res) => {
     console.error("Contact form error:", error);
     return res.status(500).json({
       success: false,
-      message: "An error occurred while processing your request. Please try again later."
+      message:
+        "An error occurred while processing your request. Please try again later.",
     } as ContactResponse);
   }
 };
@@ -114,7 +119,7 @@ function escapeHtml(text: string): string {
     "<": "&lt;",
     ">": "&gt;",
     '"': "&quot;",
-    "'": "&#039;"
+    "'": "&#039;",
   };
   return text.replace(/[&<>"']/g, (char) => map[char]);
 }

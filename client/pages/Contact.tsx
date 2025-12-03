@@ -47,7 +47,7 @@ export default function Contact() {
         // Handle HTTP error responses
         let errorMessage = "Failed to send message. Please try again.";
         try {
-          const errorData = await response.json() as Partial<ContactResponse>;
+          const errorData = (await response.json()) as Partial<ContactResponse>;
           errorMessage = errorData.message || errorMessage;
         } catch {
           // If response is not JSON, use default message
@@ -56,14 +56,20 @@ export default function Contact() {
         return;
       }
 
-      const data = await response.json() as ContactResponse;
+      const data = (await response.json()) as ContactResponse;
 
       if (data.success) {
         toast.success(data.message);
         setSubmitted(true);
         // Reset form after 3 seconds
         setTimeout(() => {
-          setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            message: "",
+          });
           setSubmitted(false);
         }, 3000);
       } else {
@@ -74,11 +80,15 @@ export default function Contact() {
 
       // Provide more specific error messages
       if (error instanceof TypeError) {
-        toast.error("Network error. Please check your connection and try again.");
+        toast.error(
+          "Network error. Please check your connection and try again.",
+        );
       } else if (error instanceof SyntaxError) {
         toast.error("Invalid response from server. Please try again.");
       } else {
-        toast.error("An error occurred while sending your message. Please try again.");
+        toast.error(
+          "An error occurred while sending your message. Please try again.",
+        );
       }
     } finally {
       setIsLoading(false);
