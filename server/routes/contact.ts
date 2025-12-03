@@ -17,8 +17,11 @@ const contactFormSchema = z.object({
 
 export const handleContact: RequestHandler = async (req, res) => {
   try {
+    // Ensure req.body is available and is an object
+    const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+
     // Validate request body
-    const data = contactFormSchema.parse(req.body) as ContactFormData;
+    const data = contactFormSchema.parse(body) as ContactFormData;
 
     // Send email to admin
     const adminEmailResult = await resend.emails.send({
