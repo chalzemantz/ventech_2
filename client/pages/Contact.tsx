@@ -3,6 +3,8 @@ import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { toast } from "sonner";
+import type { ContactFormData, ContactResponse } from "@shared/api";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -25,16 +28,38 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({ name: "", email: "", phone: "", company: "", message: "" });
-      setSubmitted(false);
-    }, 3000);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData as ContactFormData),
+      });
+
+      const data: ContactResponse = await response.json();
+
+      if (response.ok && data.success) {
+        toast.success(data.message);
+        setSubmitted(true);
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+          setSubmitted(false);
+        }, 3000);
+      } else {
+        toast.error(data.message || "Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("An error occurred while sending your message. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
