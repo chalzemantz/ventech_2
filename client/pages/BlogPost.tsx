@@ -102,7 +102,7 @@ export default function BlogPost() {
           <div className="border-t border-gray-200 pt-8 mb-12">
             <div className="bg-gray-50 rounded-lg p-8">
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                About BlackBugs Technologies
+                About Ventechplus Technologies
               </h3>
               <p className="text-gray-700">
                 We are a team of experienced software developers, designers, and

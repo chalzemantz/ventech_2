@@ -38,9 +38,9 @@ export default function Navbar() {
             className="flex items-center gap-2 font-bold text-xl text-gray-900"
           >
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-bold">B</span>
+              <span className="text-white text-sm font-bold"><img src="../../../public/icon.png"></img></span>
             </div>
-            <span>BlackBugs</span>
+            <span>Ventechplus</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -79,9 +79,12 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
+            <Link
+            to="/contact">
             <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-6">
               Let's Talk →
             </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
 import { Zap, TrendingUp, Shield, Smile, Leaf, Star } from "lucide-react";
 import { careerBenefits } from "@shared/data/careers";
-
+import { Link } from "react-router-dom";
 export default function Career() {
   const icons = [Zap, TrendingUp, Shield, Smile, Leaf, Star];
 
@@ -15,10 +15,10 @@ export default function Career() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Career at BlackBugs Technologies
+            Career at Ventechplus Technologies
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Explore exciting career opportunities with BlackBugs Technologies.
+            Explore exciting career opportunities with Ventechplus Technologies.
             Join a passionate team of innovators and take your professional
             journey to the next level. We're always looking for driven, skilled,
             and creative individuals to grow with us.
@@ -68,21 +68,21 @@ export default function Career() {
             {[
               {
                 title: "Senior Full Stack Developer",
-                location: "Surat, Gujarat",
+                location: "Lubbock, Texus",
                 type: "Full-time",
                 description:
                   "We're looking for an experienced full stack developer with expertise in React, Node.js, and cloud technologies. You'll work on innovative projects that impact thousands of users.",
               },
               {
                 title: "Mobile App Developer",
-                location: "Surat, Gujarat",
+                location: "Lubbock, Texus",
                 type: "Full-time",
                 description:
                   "Join our mobile team to develop cutting-edge iOS and Android applications. Experience with React Native or native development is a plus.",
               },
               {
                 title: "UI/UX Designer",
-                location: "Surat, Gujarat",
+                location: "Lubbock, Texus",
                 type: "Full-time",
                 description:
                   "Create beautiful and intuitive user interfaces for our web and mobile applications. Portfolio showcasing your design work is required.",
@@ -107,9 +107,9 @@ export default function Career() {
                     </div>
                     <p className="text-gray-700">{position.description}</p>
                   </div>
-                  <button className="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full whitespace-nowrap transition-colors">
-                    Apply Now
-                  </button>
+                    <button className="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full whitespace-nowrap transition-colors">
+                      Apply Now
+                    </button>
                 </div>
               </div>
             ))}
@@ -145,7 +145,7 @@ export default function Career() {
             <div>
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop"
-                alt="BlackBugs Team"
+                alt="Ventechplus Team"
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -200,11 +200,11 @@ export default function Career() {
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-4xl font-bold mb-6">Ready to Join Our Team?</h2>
           <p className="text-xl text-blue-100 mb-8">
-            Send your resume and let's talk about your career with BlackBugs
+            Send your resume and let's talk about your career with Ventechplus
             Technologies.
           </p>
           <a
-            href="mailto:careers@blackbugs.in"
+            href="mailto:admin@ventechplus.xyz"
             className="inline-block bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors"
           >
             Apply Now

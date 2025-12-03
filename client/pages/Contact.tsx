@@ -66,10 +66,10 @@ export default function Contact() {
                       Email
                     </h3>
                     <a
-                      href="mailto:info@blackbugs.in"
+                      href="mailto:admin@ventechplus.xyz"
                       className="text-primary hover:underline"
                     >
-                      info@blackbugs.in
+                      admin@ventechplus.xyz
                     </a>
                   </div>
                 </div>
@@ -86,10 +86,10 @@ export default function Contact() {
                       Phone
                     </h3>
                     <a
-                      href="tel:+917698376466"
+                      href="tel:+17746363624"
                       className="text-primary hover:underline"
                     >
-                      +91 76983 76466
+                      +1-774-636-3624
                     </a>
                   </div>
                 </div>
@@ -106,13 +106,11 @@ export default function Contact() {
                       Address
                     </h3>
                     <p className="text-gray-700">
-                      606, Silver Trade Centre
+                      1620 Broadway St
                       <br />
-                      Beside Moon Garden, Utaran
+                      Houston, Texus, US
                       <br />
-                      Surat, Gujarat, India
-                      <br />
-                      394105
+                      TX 79401
                     </p>
                   </div>
                 </div>
@@ -200,7 +198,7 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="+91 XXXXX XXXXX"
+                        placeholder="+1 XXX XXX XXXX"
                       />
                     </div>
 
@@ -255,8 +253,8 @@ export default function Contact() {
                 width="100%"
                 height="100%"
                 frameBorder="0"
-                title="BlackBugs Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.8894236451843!2d72.80627!3d21.16509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04d0c0e0e0e01%3A0xe0e0e0e0e0e0e0e!2sBlack%20Bugs%20Technologies!5e0!3m2!1sen!2sin!4v1234567890"
+                title="Ventechplus Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7906259328715!2d-101.85639682517228!3d33.58478507333667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86fe12d25fe4defb%3A0xeaf86974b5b78a0e!2s1620%20Broadway%20St%2C%20Lubbock%2C%20TX%2079401!5e0!3m2!1sen!2sus!4v1764746633943!5m2!1sen!2sus"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"

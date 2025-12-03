@@ -1,12 +1,12 @@
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/HeroSection";
 import { Lightbulb, Target, Users, Award } from "lucide-react";
-
+import { Link } from "react-router-dom";
 export default function About() {
   return (
     <Layout>
       <HeroSection
-        title="About BlackBugs Technologies"
+        title="About Ventechplus Technologies"
         subtitle="Transforming Ideas Into Digital Reality"
       />
 
@@ -20,7 +20,7 @@ export default function About() {
               </h2>
               <p className="text-lg text-gray-700 mb-4">
                 Founded with a vision to transform businesses through
-                technology, BlackBugs Technologies has been at the forefront of
+                technology, Ventechplus Technologies has been at the forefront of
                 digital innovation for years. We started small but thought big,
                 believing that every business deserves access to world-class
                 technology solutions.
@@ -153,9 +153,12 @@ export default function About() {
           <p className="text-xl text-blue-100 mb-8">
             Get in touch with our team to discuss how we can help your business.
           </p>
-          <button className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors">
-            Contact Us Today
-          </button>
+          <Link
+            to="/contact">
+            <button className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors">
+              Contact Us Today
+            </button>
+          </Link>
         </div>
       </section>
     </Layout>

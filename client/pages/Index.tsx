@@ -66,7 +66,7 @@ export default function Index() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                Partner with BlackBugs Technologies to turn your ideas into
+                Partner with Ventechplus Technologies to turn your ideas into
                 powerful, scalable solutions that drive success.
               </motion.p>
               <motion.div
@@ -75,13 +75,16 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-lg">
-                  Let's Talk →
-                </Button>
+                <Link
+                  to="/contact">
+                  <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-lg">
+                    Let's Talk →
+                  </Button>
+                </Link>
                 <Link to="/portfolio">
                   <Button
                     variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-gray-900 rounded-full px-8 py-6 text-lg w-full sm:w-auto"
+                    className="border-white text-blue-500 hover:bg-white hover:text-gray-900 rounded-full px-8 py-6 text-lg w-full sm:w-auto"
                   >
                     View all Work →
                   </Button>
@@ -99,7 +102,7 @@ export default function Index() {
               <div className="relative">
                 <img
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=600&fit=crop"
-                  alt="BlackBugs Team"
+                  alt="Ventechplus Team"
                   className="rounded-lg shadow-2xl hover:shadow-3xl transition-shadow"
                 />
               </div>
@@ -245,12 +248,15 @@ export default function Index() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Let's discuss how BlackBugs Technologies can help you achieve your
+            Let's discuss how Ventechplus Technologies can help you achieve your
             digital goals.
           </p>
+          <Link
+            to="/contact">
           <Button className="bg-white text-primary hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
             Get in Touch Today
           </Button>
+          </Link>
         </div>
       </section>
     </Layout>

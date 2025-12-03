@@ -36,7 +36,7 @@ A robust TMS can increase efficiency by up to 30% while reducing costs by 20%.
     author: "Black Bugs",
     date: "September 30, 2025",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1759884247505-a0479e623a1f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA4fHxJVCUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww",
     readTime: 5,
   },
   {
@@ -117,7 +117,7 @@ Understanding these trends helps you stay competitive in the mobile app market.
     author: "Black Bugs",
     date: "September 15, 2025",
     image:
-      "https://images.unsplash.com/photo-1512941691920-25bde6242e8d?w=500&h=300&fit=crop",
+      "https://plus.unsplash.com/premium_photo-1678565202049-9e37b2da8060?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fElUJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
     readTime: 8,
   },
   {
@@ -144,7 +144,7 @@ Custom software is an investment that pays dividends over time.
     author: "Black Bugs",
     date: "September 10, 2025",
     image:
-      "https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=500&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1763568258659-70b5dc69158e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fElUJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
     readTime: 6,
   },
   {
@@ -171,7 +171,7 @@ Good IT support ensures your business operates smoothly without interruptions.
     author: "Black Bugs",
     date: "September 5, 2025",
     image:
-      "https://images.unsplash.com/photo-1460925895917-adf4e565e6b2?w=500&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SVQlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D",
     readTime: 5,
   },
 ];

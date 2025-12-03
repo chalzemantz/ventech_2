@@ -16,7 +16,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A comprehensive ERP system developed for healthcare institutions. Streamlines patient management, appointments, billing, and medical records.",
     image:
-      "https://images.unsplash.com/photo-1576091160550-112173f7f869?w=500&h=300&fit=crop",
+      "https://plus.unsplash.com/premium_photo-1678566153919-86c4ba4216f1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     longDescription:
       "This innovative healthcare solution provides clinics and hospitals with complete patient management capabilities, appointment scheduling, billing integration, and secure medical records management.",
     technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
@@ -40,7 +40,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "Real-time fleet tracking and logistics management system. Revolutionizes transportation and logistics operations with GPS integration.",
     image:
-      "https://images.unsplash.com/photo-1553531889-e6cf89d45398?w=500&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1722596627369-a743837c7176?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fElUJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
     longDescription:
       "A comprehensive transport management dashboard enabling real-time vehicle tracking, route optimization, and fleet operations management.",
     technologies: ["React", "Google Maps API", "Firebase", "Node.js"],
@@ -64,7 +64,7 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "Complete food delivery platform connecting restaurants with customers. Features order tracking, payments, and ratings.",
     image:
-      "https://images.unsplash.com/photo-1585162714684-38269d6639fd?w=500&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8SVQlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D",
     longDescription:
       "A full-featured food delivery app with real-time order tracking, multiple payment options, restaurant ratings, and customer reviews.",
     technologies: ["React Native", "Firebase", "Node.js", "MongoDB"],
