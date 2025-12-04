@@ -17,9 +17,9 @@ export default function Navbar() {
       label: "Services",
       href: "/services",
       submenu: [
-        { label: "Web Development", href: "/services" },
-        { label: "Mobile App Development", href: "/services" },
-        { label: "Custom Software", href: "/services" },
+        { label: "Web Development", href: "/services?category=web-app-development" },
+        { label: "Mobile App Development", href: "/services?category=mobile-app-development" },
+        { label: "Custom Software", href: "/services?category=custom-software-solutions" },
       ],
     },
     { label: "Portfolio", href: "/portfolio" },
