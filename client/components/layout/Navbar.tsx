@@ -17,9 +17,18 @@ export default function Navbar() {
       label: "Services",
       href: "/services",
       submenu: [
-        { label: "Web Development", href: "/services?category=web-app-development" },
-        { label: "Mobile App Development", href: "/services?category=mobile-app-development" },
-        { label: "Custom Software", href: "/services?category=custom-software-solutions" },
+        {
+          label: "Web Development",
+          href: "/services?category=web-app-development",
+        },
+        {
+          label: "Mobile App Development",
+          href: "/services?category=mobile-app-development",
+        },
+        {
+          label: "Custom Software",
+          href: "/services?category=custom-software-solutions",
+        },
       ],
     },
     { label: "Portfolio", href: "/portfolio" },
@@ -38,7 +47,9 @@ export default function Navbar() {
             className="flex items-center gap-2 font-bold text-xl text-gray-900"
           >
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-bold"><img src="../../../public/icon.png"></img></span>
+              <span className="text-white text-sm font-bold">
+                <img src="../../../public/icon.png"></img>
+              </span>
             </div>
             <span>Ventechplus</span>
           </Link>
@@ -79,11 +90,10 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link
-            to="/contact">
-            <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-6">
-              Let's Talk →
-            </Button>
+            <Link to="/contact">
+              <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-6">
+                Let's Talk →
+              </Button>
             </Link>
           </div>
 

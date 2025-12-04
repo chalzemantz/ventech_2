@@ -27,10 +27,10 @@ export default function Services() {
     activeCategory === "all"
       ? services
       : services.filter(
-        (service) =>
-          service.category.toLowerCase().replace(/\s+/g, "-") ===
-          activeCategory.toLowerCase().replace(/\s+/g, "-"),
-      );
+          (service) =>
+            service.category.toLowerCase().replace(/\s+/g, "-") ===
+            activeCategory.toLowerCase().replace(/\s+/g, "-"),
+        );
 
   return (
     <Layout>
@@ -123,8 +123,7 @@ export default function Services() {
                 Let's discuss your project and create a solution that matches
                 your vision and budget.
               </p>
-              <Link
-                to="/contact">
+              <Link to="/contact">
                 <button className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors">
                   Schedule a Consultation
                 </button>
