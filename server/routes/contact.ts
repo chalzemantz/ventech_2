@@ -14,6 +14,18 @@ const contactFormSchema = z.object({
 
 export const handleContact: RequestHandler = async (req, res) => {
   try {
+    // Initialize Resend client lazily to ensure API key is available
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("RESEND_API_KEY environment variable is not set");
+      return res.status(500).json({
+        success: false,
+        message: "Email service is not configured. Please try again later.",
+      } as ContactResponse);
+    }
+
+    const resend = new Resend(apiKey);
+
     // Ensure req.body is available and is an object
     const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
 
