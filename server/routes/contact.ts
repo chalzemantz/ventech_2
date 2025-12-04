@@ -3,9 +3,6 @@ import { z } from "zod";
 import { Resend } from "resend";
 import type { ContactFormData, ContactResponse } from "@shared/api";
 
-// Initialize Resend client
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Validation schema
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required").trim(),
