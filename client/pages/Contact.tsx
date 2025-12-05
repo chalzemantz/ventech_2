@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "@/components/layout/Layout";
 import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
@@ -6,6 +6,29 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
 import type { ContactFormData, ContactResponse } from "@shared/api";
 import { Link } from "react-router-dom";
+import { Resend } from "resend";
+import { z } from "zod";
+
+// Validation schema
+const contactFormSchema = z.object({
+  name: z.string().min(1, "Name is required").trim(),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().optional(),
+  company: z.string().optional(),
+  message: z.string().min(1, "Message is required").trim(),
+});
+
+// Helper function to escape HTML special characters
+function escapeHtml(text: string): string {
+  const map: Record<string, string> = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;",
+  };
+  return text.replace(/[&<>"']/g, (char) => map[char]);
+}
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -33,63 +56,89 @@ export default function Contact() {
     setIsLoading(true);
 
     try {
-      const body = JSON.stringify(formData as ContactFormData);
+      // Validate form data
+      const data = contactFormSchema.parse(formData) as ContactFormData;
 
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body,
-      });
-
-      if (!response.ok) {
-        // Handle HTTP error responses
-        let errorMessage = "Failed to send message. Please try again.";
-        try {
-          const errorData = (await response.json()) as Partial<ContactResponse>;
-          errorMessage = errorData.message || errorMessage;
-        } catch {
-          // If response is not JSON, use default message
-        }
-        toast.error(errorMessage);
+      // Get API key from environment
+      const apiKey = import.meta.env.VITE_PUBLIC_RESEND_API_KEY;
+      if (!apiKey) {
+        toast.error("Email service is not configured. Please try again later.");
         return;
       }
 
-      const data = (await response.json()) as ContactResponse;
+      const resend = new Resend(apiKey);
 
-      if (data.success) {
-        toast.success(data.message);
-        setSubmitted(true);
-        // Reset form after 3 seconds
-        setTimeout(() => {
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            company: "",
-            message: "",
-          });
-          setSubmitted(false);
-        }, 3000);
-      } else {
-        toast.error(data.message || "Failed to send message");
+      // Send email to admin
+      const adminEmailResult = await resend.emails.send({
+        from: "noreply@ventechplus.xyz",
+        to: "admin@ventechplus.xyz",
+        subject: `New Contact Form Submission from ${data.name}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
+          ${data.phone ? `<p><strong>Phone:</strong> ${escapeHtml(data.phone)}</p>` : ""}
+          ${data.company ? `<p><strong>Company:</strong> ${escapeHtml(data.company)}</p>` : ""}
+          <h3>Message:</h3>
+          <p>${escapeHtml(data.message).replace(/\n/g, "<br>")}</p>
+        `,
+      });
+
+      if (adminEmailResult.error) {
+        console.error("Failed to send admin email:", adminEmailResult.error);
+        toast.error("Failed to send email. Please try again later.");
+        return;
       }
+
+      // Send confirmation email to user
+      const userEmailResult = await resend.emails.send({
+        from: "noreply@ventechplus.xyz",
+        to: data.email,
+        subject: "We received your message - Ventechplus Technologies",
+        html: `
+          <h2>Thank You for Contacting Us!</h2>
+          <p>Hi ${escapeHtml(data.name)},</p>
+          <p>We received your message and appreciate you reaching out to Ventechplus Technologies.</p>
+          <p>Our team will review your inquiry and get back to you as soon as possible.</p>
+          <p>Best regards,<br>The Ventechplus Technologies Team</p>
+        `,
+      });
+
+      if (userEmailResult.error) {
+        console.error(
+          "Failed to send confirmation email:",
+          userEmailResult.error,
+        );
+        // Don't fail the response if confirmation email fails, as the admin email was sent successfully
+      }
+
+      toast.success(
+        "Your message has been sent successfully. We'll get back to you soon!",
+      );
+      setSubmitted(true);
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+        setSubmitted(false);
+      }, 3000);
     } catch (error) {
-      console.error("Error submitting form:", error);
-
-      // Provide more specific error messages
-      if (error instanceof TypeError) {
-        toast.error(
-          "Network error. Please check your connection and try again.",
-        );
-      } else if (error instanceof SyntaxError) {
-        toast.error("Invalid response from server. Please try again.");
-      } else {
-        toast.error(
-          "An error occurred while sending your message. Please try again.",
-        );
+      // Handle validation errors
+      if (error instanceof z.ZodError) {
+        const firstError = error.errors[0];
+        toast.error(firstError.message);
+        return;
       }
+
+      console.error("Error submitting form:", error);
+      toast.error(
+        "An error occurred while sending your message. Please try again.",
+      );
     } finally {
       setIsLoading(false);
     }
@@ -212,8 +261,7 @@ export default function Contact() {
                     </p>
                   </div>
                 ) : (
-                  <form action="https://form.resend.com/your-form-id" method="POST">
-                   {/* <form onSubmit={handleSubmit} className="space-y-6"> */}
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Name */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
