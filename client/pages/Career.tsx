@@ -107,9 +107,12 @@ export default function Career() {
                     </div>
                     <p className="text-gray-700">{position.description}</p>
                   </div>
+                  <Link
+                    to="/contact">
                     <button className="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full whitespace-nowrap transition-colors">
                       Apply Now
                     </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -203,12 +206,12 @@ export default function Career() {
             Send your resume and let's talk about your career with Ventechplus
             Technologies.
           </p>
-          <a
-            href="mailto:admin@ventechplus.xyz"
+          <Link
+            to="/contact"
             className="inline-block bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors"
           >
             Apply Now
-          </a>
+          </Link>
         </div>
       </section>
     </Layout>

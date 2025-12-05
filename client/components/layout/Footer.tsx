@@ -82,7 +82,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="/services"
+                  href="/services?category=web-app-development"
                   className="text-sm hover:text-primary transition-colors"
                 >
                   Web Development
@@ -90,7 +90,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/services"
+                  href="/services?category=mobile-app-development"
                   className="text-sm hover:text-primary transition-colors"
                 >
                   Mobile Apps
@@ -98,7 +98,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/services"
+                  href="/services?category=custom-software-solutions"
                   className="text-sm hover:text-primary transition-colors"
                 >
                   Custom Software
@@ -106,7 +106,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/services"
+                  href="/services?category=it-support"
                   className="text-sm hover:text-primary transition-colors"
                 >
                   IT Support
@@ -121,26 +121,26 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Mail size={16} className="mt-1 flex-shrink-0" />
-                <a
-                  href="mailto:admin@ventechplus.xyz"
+                <Link
+                  to="/contact"
                   className="text-sm hover:text-primary transition-colors"
                 >
                   admin@ventechplus.xyz
-                </a>
+                </Link>
               </li>
               <li className="flex items-start gap-2">
                 <Phone size={16} className="mt-1 flex-shrink-0" />
                 <a
-                  href="tel:+17746363624"
+                  href="tel:+13513521121"
                   className="text-sm hover:text-primary transition-colors"
                 >
-                  +1-774-636-3624
+                  +1-351-352-1121
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
                 <span className="text-sm">
-                  1620 Broadway St
+                  1640 Broadway St
                   <br />
                   Lubbock, Texus, US
                   <br />
@@ -155,7 +155,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
-              © {currentYear} Ventechplus Technologies. All rights reserved.
+              © 2020 - {currentYear} Ventechplus Technologies. All rights reserved.
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <a

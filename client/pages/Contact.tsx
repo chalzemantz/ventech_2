@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
 import type { ContactFormData, ContactResponse } from "@shared/api";
-
+import { Link } from "react-router-dom";
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -123,12 +123,12 @@ export default function Contact() {
                     <h3 className="text-lg font-semibold text-gray-900">
                       Email
                     </h3>
-                    <a
-                      href="mailto:admin@ventechplus.xyz"
-                      className="text-primary hover:underline"
+                    <Link
+                      to="/contact"
+                      className="text-sm hover:text-primary transition-colors"
                     >
                       admin@ventechplus.xyz
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
@@ -144,10 +144,10 @@ export default function Contact() {
                       Phone
                     </h3>
                     <a
-                      href="tel:+17746363624"
+                      href="tel:+13513521121"
                       className="text-primary hover:underline"
                     >
-                      +1-774-636-3624
+                      +1-351-352-1121
                     </a>
                   </div>
                 </div>
@@ -164,9 +164,9 @@ export default function Contact() {
                       Address
                     </h3>
                     <p className="text-gray-700">
-                      1620 Broadway St
+                      1640 Broadway St
                       <br />
-                      Houston, Texus, US
+                      Lubbock, Texus, US
                       <br />
                       TX 79401
                     </p>
@@ -212,7 +212,8 @@ export default function Contact() {
                     </p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form action="https://form.resend.com/your-form-id" method="POST">
+                   {/* <form onSubmit={handleSubmit} className="space-y-6"> */}
                     {/* Name */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -316,7 +317,7 @@ export default function Contact() {
                 height="100%"
                 frameBorder="0"
                 title="Ventechplus Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7906259328715!2d-101.85639682517228!3d33.58478507333667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86fe12d25fe4defb%3A0xeaf86974b5b78a0e!2s1620%20Broadway%20St%2C%20Lubbock%2C%20TX%2079401!5e0!3m2!1sen!2sus!4v1764746633943!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7906259328715!2d-101.85639682517228!3d33.58478507333667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86fe12d25fe4defb%3A0xeaf86974b5b78a0e!2s1640%20Broadway%20St%2C%20Lubbock%2C%20TX%2079401!5e0!3m2!1sen!2sus!4v1764746633943!5m2!1sen!2sus"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
